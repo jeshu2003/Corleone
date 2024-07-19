@@ -1,145 +1,74 @@
-# Corleone :  Computational.Organization.and.Real-time.Language.Engineering.and.Operational.Navigation.Environment  
+#Corleone: AI-Based Virtual Assistant
 
-Corleone AI is a versatile assistant designed to perform a wide range of tasks, from fetching weather updates to playing music. Below is a comprehensive overview of its functions.
+##Project Overview
+Corleone is an advanced AI-based virtual assistant developed in Python, designed to streamline various tasks using voice commands. It incorporates features like natural language processing, encryption, and cybersecurity advice, making it a versatile tool for both everyday and security-focused tasks.
 
-## Initialization
+##Features
+**Speech Recognition**: Converts user speech into text commands.
+**Text-to-Speech**: Provides vocal responses to user queries.
+**Web Searches**: Searches Google and YouTube based on user input.
+**Weather Information**: Retrieves and announces current weather conditions.
+**News Updates**: Fetches and reads out news headlines from different categories.
+**Email Phishing Detection**: Identifies potential phishing attempts in emails.
+**URL Legitimacy Check**: Assesses the safety of URLs.
+**Password Management**: Checks password strength and generates secure passwords.
+**File Encryption/Decryption**: Secures files through encryption and decryption.
+**Cybersecurity Tips**: Provides daily tips and advice on cybersecurity practices.
+**Event Scheduling**: Allows users to set reminders and alarms.
+**Translation Services**: Translates text into various languages.
+##Installation
+Clone the Repository:
 
-### `pyttsx3`
-The text-to-speech (TTS) engine used to convert text to speech. It uses the SAPI5 voice synthesizer.
+bash
+Copy code
+git clone https://github.com/yourusername/corleone.git
+Navigate to the Project Directory:
 
-### `conversation_context`
-Global variable to keep track of the current context of the conversation.
+bash
+Copy code
+cd corleone
+Install Dependencies:
+Create a virtual environment and install the necessary libraries:
 
-### `user_data`
-List to store user queries and timestamps for logging purposes.
+bash
+Copy code
+pip install -r requirements.txt
+Usage
+Run the Application:
 
-### `Fernet`
-Library from `cryptography` used to encrypt and decrypt messages.
+bash
+Copy code
+python corleone.py
+Interact with the Assistant:
 
-## Utility Functions
+Use voice commands to interact with Corleone.
+Examples: "What's the weather?", "Search YouTube for music videos", "Translate text to French".
+Functionality
+##Key Functions
+speak(audio): Converts text to speech to communicate with the user.
+takeCommand(): Captures and interprets user voice commands.
+searchGoogle(query): Performs a Google search and reads out the results.
+searchYoutube(query): Executes a YouTube search and plays the video.
+get_weather(city_name): Provides weather updates for a specified city.
+news_updates(query): Fetches and announces news headlines.
+analyzeSentiment(query): Determines the sentiment of the user's input.
+encrypt_message(message): Encrypts a text message.
+decrypt_message(encrypted_message): Decrypts an encrypted message.
+encrypt_file(file_path, key): Encrypts a file with a specified key.
+decrypt_file(file_path, key): Decrypts an encrypted file.
+check_url_legitimacy(url): Validates the safety of a URL.
+check_password_strength(password): Assesses the strength of a password.
+generate_password(length): Creates a secure random password.
+scan_open_ports(ip): Scans for open network ports on an IP address.
+wifi_security_advice(): Provides tips for improving WiFi security.
+##Future Work
+**Enhanced Natural Language Understanding**: Improve accuracy in understanding and processing user commands.
+Integration with More Services**: Extend functionalities to include integration with additional services and APIs.
+**User Interface Development**: Develop a graphical user interface (GUI) for easier interaction.
+**Performance Optimization**: Optimize performance for faster response times and lower resource usage.
+##License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### `remove_words(query, words)`
-Removes specific words from the query to clean or preprocess the input.
-
-### `speak(audio)`
-Converts text to speech using the TTS engine.
-
-### `greetUser(name="Jeshu")`
-Greets the user with a personalized message.
-
-### `wishMe()`
-Wishes the user based on the current time of the day.
-
-### `takeCommand()`
-Listens to the user’s voice input and converts it to text using the Google Speech Recognition API.
-
-### `updateContext(query)`
-Updates the global context based on keywords in the query.
-
-### `collectUserData(query)`
-Collects user data, such as queries and timestamps, for logging and analysis.
-
-## Weather and News Functions
-
-### `get_weather(city_name)`
-Fetches the weather update for a given city using the OpenWeatherMap API.
-
-### `news_updates()`
-Provides news updates in different categories using the NewsAPI.
-
-## Sentiment Analysis and Response
-
-### `analyzeSentiment(query)`
-Analyzes the sentiment of the user’s query to determine if it is positive, negative, or neutral.
-
-### `generateResponse(query)`
-Generates an appropriate response based on the sentiment analysis of the user’s query.
-
-## Entertainment and Utility Functions
-
-### `extract_yt_term(command)`
-Extracts the search term from a query to play a video on YouTube.
-
-### `PlayYoutube(query)`
-Plays a YouTube video based on the search term extracted from the query.
-
-### `joke()`
-Tells a random joke.
-
-### `cricket_updates()`
-Fetches live cricket updates from the Cricbuzz API.
-
-### `open_desktop_app(app_name)`
-Opens a specified desktop application.
-
-### `open_android_app(package_name)`
-Opens a specified Android application using ADB.
-
-## Encryption and Decryption Functions
-
-### `encrypt_message(message)`
-Encrypts a given message using the Fernet encryption.
-
-### `decrypt_message(encrypted_message)`
-Decrypts a given encrypted message.
-
-## Main Functionality Loop
-
-The main loop listens for user commands and executes the corresponding functions based on the input. It handles various commands such as:
-- Searching Wikipedia
-- Opening websites like YouTube and Google
-- Playing music from a local directory
-- Telling the current time
-- Providing weather updates
-- Fetching news updates
-- Telling jokes
-- Encrypting and decrypting messages
-- Analyzing sentiment
-- Playing YouTube videos
-- Fetching cricket updates
-- Opening desktop and Android applications
-- Exiting or going to sleep
-
-## How to Use Corleone AI
-
-1. **Start the Assistant:**
-   - Initialize the TTS engine.
-   - Call `wishMe()` and `greetUser()` to welcome the user.
-
-2. **Give Commands:**
-   - Use voice commands to interact with the assistant.
-   - The assistant listens, processes the command, and executes the corresponding function.
-
-3. **Utility Functions:**
-   - Use commands like "What's the weather in [city]?" or "Give me the news update in [category]" to get specific information.
-
-4. **Entertainment:**
-   - Ask the assistant to play music or tell jokes.
-
-5. **Encryption and Decryption:**
-   - Encrypt and decrypt messages using voice commands.
-
-6. **Application Control:**
-   - Open desktop or Android applications using specific commands.
-
-7. **Sentiment Analysis:**
-   - The assistant can analyze the sentiment of your queries and respond accordingly.
-
-8. **Exit:**
-   - Use commands like "Go to sleep" or "Exit" to close the assistant.
-
-Running the Assistant
-The script contains a main loop that listens for user commands and triggers the appropriate functions based on the input.
-
-Contributions
-Contributions are welcome! Please fork the repository and submit a pull request with your improvements.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.                                                                                  
-
-Project Link:
-     The Complete Project is in this drive link.
-     Gdrive Link: https://drive.google.com/drive/folders/1hbN8Uu8hwMSCDHUmiMTR_4QaLtdbEtTK?usp=drive_link
-
-Conclusion :  
-     Enjoy this AI and be happy
+##Acknowledgements
+Python libraries used: pyttsx3, speech_recognition, wikipedia, requests, pywhatkit, googletrans, cryptography, and more.
+Special thanks to contributors and open-source communities.
